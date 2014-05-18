@@ -75,7 +75,7 @@ if( ! class_exists( 'AffiliateWP_MailChimp_Add_on' ) ){
 
             $affwp_plugin_data = get_plugin_data( WP_PLUGIN_DIR . '/AffiliateWP/affiliate-wp.php', false, false );
 
-            if ( ! is_plugin_active( 'AffiliateWP/affiliate-wp.php' ) ) {
+            if ( ! class_exists( 'Affiliate_WP' ) ) {
                 echo '<div class="error"><p>You must install and activate <strong><a href="https://affiliatewp.com/pricing" title="AffiliateWP" target="_blank">AffiliateWP</a></strong> to use <strong>AffiliateWP MailChimp Add-on</strong></p></div>';
             }
 
@@ -199,7 +199,7 @@ if( ! class_exists( 'AffiliateWP_MailChimp_Add_on' ) ){
 
             $mailchimp_api_key  = affiliate_wp()->settings->get( 'affwp_mailchimp_api_key' );
 
-            if( ! empty( $_POST['afwfwp_mailchimp_subscribe'] ) && ! empty( $mailchimp_api_key ) ) {
+            if( ! empty( $_POST['affwp_mailchimp_subscribe'] ) && ! empty( $mailchimp_api_key ) ) {
 
                 $name               = explode( ' ', sanitize_text_field( $_POST['affwp_user_name'] ) );
 
@@ -232,11 +232,12 @@ if( ! class_exists( 'AffiliateWP_MailChimp_Add_on' ) ){
                     'replace_interests' => false,
                     'send_welcome'      => false,
                 ));
-                print_r($result);
 
-                if ( $result === true ) {
-                    return true;
+                if ( 'error' == $result['status'] ){
+                    return false;
                 }
+
+                return true;
 
             }
 
@@ -287,11 +288,12 @@ if( ! class_exists( 'AffiliateWP_MailChimp_Add_on' ) ){
                     'replace_interests' => false,
                     'send_welcome'      => false,
                 ));
-                print_r($result);
 
-                if ( $result === true ) {
-                    return true;
+                if ( 'error' == $result['status'] ){
+                    return false;
                 }
+
+                return true;
 
             }
 
