@@ -9,7 +9,7 @@
 
 **Tested up to:** 3.9.1
 
-**Stable tag:** 1.0.0
+**Stable tag:** 1.0.1
 
 **License:** GPLv2 or later
 
@@ -23,7 +23,7 @@ AffiliateWP MailChimp Add-on adds a newsletter signup checkbox to your Affiliate
 
 ## Description ##
 
-> This plugin requires [AffiliateWP](http://affiliatewp.com/?ref=109) to be installed and activated on your site. <strong>It will NOT function without it</strong>.
+> This plugin requires [AffiliateWP](http://affiliatewp.com/) to be installed and activated on your site. <strong>It will NOT function without it</strong>.
 
 AffiliateWP MailChimp Add-on adds a checkbox to the Affiliate sign up page, which enables your affiliates to subscribe to your MailChimp powered newsletter when registering.
 
@@ -32,7 +32,7 @@ An admin can also choose whether to add an affiliate to the newsletter when addi
 
 ### What is AffiliateWP? ###
 
-[AffiliateWP](http://affiliatewp.com/?ref=109) provides a complete affiliate management system for your WordPress website that seamlessly integrates with all major WordPress e-commerce and membership platforms. It aims to provide everything you need in a simple, clean, easy to use system that you will love to use.
+[AffiliateWP](http://affiliatewp.com/) provides a complete affiliate management system for your WordPress website that seamlessly integrates with all major WordPress e-commerce and membership platforms. It aims to provide everything you need in a simple, clean, easy to use system that you will love to use.
 
 
 
@@ -88,7 +88,7 @@ To configure the AffiliateWP MailChimp Add-On plugin
 
 ### What Do I Need To Use The Plugin ###
 
-1.	You need to have the [AffiliateWP](http://affiliatewp.com/?ref=109) plugin installed and activated on your WordPress site.
+1.	You need to have the [AffiliateWP](http://affiliatewp.com/) plugin installed and activated on your WordPress site.
 
 
 
