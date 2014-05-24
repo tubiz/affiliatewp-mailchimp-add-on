@@ -1,27 +1,19 @@
-# AffiliateWP MailChimp Add-On #
-**Contributors:** tubiz
-
-**Donate link:** http://bosun.me/donate
-
-**Tags:** affiliatewp, affiliate wp, mailchimp, tubiz plugins, nigeria, e-commerce, ecommerce, Tunbosun Ayinla
-
-**Requires at least:** 3.8
-
-**Tested up to:** 3.9.1
-
-**Stable tag:** 1.0.0
-
-**License:** GPLv2 or later
-
-**License URI:** http://www.gnu.org/licenses/gpl-2.0.html
-
+=== AffiliateWP MailChimp Add-On ===
+Contributors: tubiz
+Donate link: http://bosun.me/donate
+Tags: affiliatewp, affiliate wp, mailchimp, tubiz plugins, nigeria, e-commerce, ecommerce, Tunbosun Ayinla
+Requires at least: 3.8
+Tested up to: 3.9.1
+Stable tag: 1.0.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 AffiliateWP MailChimp Add-on adds a newsletter signup checkbox to your AffiliateWP affiliates sign up page.
 
 
 
 
-## Description ##
+== Description ==
 
 > This plugin requires [AffiliateWP](http://affiliatewp.com/?ref=109) to be installed and activated on your site. <strong>It will NOT function without it</strong>.
 
@@ -30,28 +22,28 @@ AffiliateWP MailChimp Add-on adds a checkbox to the Affiliate sign up page, whic
 An admin can also choose whether to add an affiliate to the newsletter when adding a new affiliate from the WordPress admin.
 
 
-### What is AffiliateWP? ###
+= What is AffiliateWP? =
 
 [AffiliateWP](http://affiliatewp.com/?ref=109) provides a complete affiliate management system for your WordPress website that seamlessly integrates with all major WordPress e-commerce and membership platforms. It aims to provide everything you need in a simple, clean, easy to use system that you will love to use.
 
 
 
-### Suggestions / Feature Request ###
+= Suggestions / Feature Request =
 
 If you have suggestions or a new feature request, feel free to get in touch with me via the contact form on my website [here](http://bosun.me/get-in-touch/)
 
 You can also follow me on Twitter! **[@tubiz](http://twitter.com/tubiz)**
 
 
-### Contribute ###
+= Contribute =
 To contribute to this plugin feel free to fork it on GitHub [AffiliateWP MailChimp Add-On on GitHub](https://github.com/tubiz/affiliatewp-mailchimp-add-on)
 
 
 
 
-## Installation ##
+== Installation ==
 
-### Automatic Installation ###
+= Automatic Installation =
 * 	Login to your WordPress Admin area
 * 	Go to "Plugins > Add New" from the left hand menu
 * 	In the search box type "AffiliateWP MailChimp Add-On"
@@ -61,7 +53,7 @@ To contribute to this plugin feel free to fork it on GitHub [AffiliateWP MailChi
 * If successful, click "Activate Plugin" to activate it.
 * To configure the plugin visit the AffiliateWP MailChimp Settings section below.
 
-### Manual Installation ###
+= Manual Installation =
 * 	Download the plugin zip file
 * 	Login to your WordPress Admin. Click on "Plugins > Add New" from the left hand menu.
 *  Click on the "Upload" option, then click "Choose File" to select the zip file from your computer. Once selected, press "OK" and press the "Install Now" button.
@@ -69,7 +61,7 @@ To contribute to this plugin feel free to fork it on GitHub [AffiliateWP MailChi
 * 	To configure the plugin visit the AffiliateWP MailChimp Settings section below.
 
 
-### AffiliateWP MailChimp Settings ###
+= AffiliateWP MailChimp Settings =
 To configure the AffiliateWP MailChimp Add-On plugin
 1. 	Open the settings page for AffiliateWP and click the "Integrations" tab.
 2. 	Scroll down a bit and you will see a section for "AffiliateWP MailChimp Settings".
@@ -84,24 +76,24 @@ To configure the AffiliateWP MailChimp Add-On plugin
 * Click on __Save Changes__ for the changes you made to be effected.
 
 
-## Frequently Asked Questions ##
+== Frequently Asked Questions ==
 
-### What Do I Need To Use The Plugin ###
+= What Do I Need To Use The Plugin =
 
 1.	You need to have the [AffiliateWP](http://affiliatewp.com/?ref=109) plugin installed and activated on your WordPress site.
 
 
 
-## Changelog ##
+== Changelog ==
 
-### 1.0.0 ###
+= 1.0.0 =
 *   Initial release
 
 
 
 
 
-## Upgrade Notice ##
+== Upgrade Notice ==
 
 There is no need to upgrade just yet.
 
@@ -110,14 +102,12 @@ There is no need to upgrade just yet.
 
 
 
-## Screenshots ##
+== Screenshots ==
+
+1. Newsletter Subscription checkbox on the Affiliate Registration Page
+
+2. Add Affiliate to Newsletter from the AffiliateWP add new Affiliate page in the admin backend.
+
+3. AffiliateWP MailChimp Add-On Settings
 
 
-###1. Newsletter Subscription checkbox on the Affiliate Registration Page
-###![Screenshot 1](https://dl.dropboxusercontent.com/u/28591673/affiliatewp-mailchimp-addon/screenshot-1.png)
-
-###2. Add Affiliate to Newsletter from the AffiliateWP add new Affiliate page in the admin backend.
-###![Screenshot 2](https://dl.dropboxusercontent.com/u/28591673/affiliatewp-mailchimp-addon/screenshot-2.png)
-
-###3. AffiliateWP MailChimp Add-On Settings
-###![Screenshot 3](https://dl.dropboxusercontent.com/u/28591673/affiliatewp-mailchimp-addon/screenshot-3.png)
