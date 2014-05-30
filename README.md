@@ -9,7 +9,7 @@
 
 **Tested up to:** 3.9.1
 
-**Stable tag:** 1.0.1
+**Stable tag:** 1.0.2
 
 **License:** GPLv2 or later
 
@@ -97,7 +97,12 @@ To configure the AffiliateWP MailChimp Add-On plugin
 ### 1.0.0 ###
 *   Initial release
 
+### 1.0.1 ###
+*	Removed affiliate links from readme.txt file
 
+### 1.0.2 ###
+*	Updated MailChimp class file
+*	Fixed issue arising from including MailChimp class file
 
 
 

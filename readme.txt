@@ -4,7 +4,7 @@ Donate link: http://bosun.me/donate
 Tags: affiliatewp, affiliate wp, mailchimp, tubiz plugins, nigeria, e-commerce, ecommerce, Tunbosun Ayinla
 Requires at least: 3.8
 Tested up to: 3.9.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -89,7 +89,12 @@ To configure the AffiliateWP MailChimp Add-On plugin
 = 1.0.0 =
 *   Initial release
 
+= 1.0.1 =
+*	Removed affiliate links from readme.txt file
 
+= 1.0.2 =
+*	Updated MailChimp class file
+*	Fixed issue arising from including MailChimp class file
 
 
 

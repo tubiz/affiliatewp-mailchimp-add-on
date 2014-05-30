@@ -3,7 +3,7 @@
     Plugin Name: AffiliateWP Mailchimp Add-on
     Plugin URI: http://bosun.me/affiliatewp-mailchimp-addon
     Description: Adds a checkbox for new affiliates to subscribe to your MailChimp Newsletter during signup.
-    Version: 1.0.1
+    Version: 1.0.2
     Author: Tunbosun Ayinla
     Author URI: http://www.bosun.me
     License:           GPL-2.0+
@@ -218,7 +218,7 @@ if( ! class_exists( 'AffiliateWP_MailChimp_Add_on' ) ){
                     $optin = false;
                 }
 
-                require_once( '/classes/api/MailChimp.php' );
+                require_once( 'classes/api/MailChimp.php' );
 
                 $MailChimp = new \Drewm\MailChimp( $mailchimp_api_key );
 
@@ -279,7 +279,7 @@ if( ! class_exists( 'AffiliateWP_MailChimp_Add_on' ) ){
                     $optin = false;
                 }
 
-                require_once( '/classes/api/MailChimp.php' );
+                require_once( 'classes/api/MailChimp.php' );
 
                 $MailChimp = new \Drewm\MailChimp( $mailchimp_api_key );
 
@@ -317,7 +317,7 @@ if( ! class_exists( 'AffiliateWP_MailChimp_Add_on' ) ){
                 $mailchimp_lists        = array();
 
                 if ( ! class_exists( 'MailChimp' ) )
-                    require_once( '/classes/api/MailChimp.php' );
+                    require_once( 'classes/api/MailChimp.php' );
 
                 $mailchimp = new \Drewm\MailChimp( $mailchimp_api_key );
                 $lists = $mailchimp->call('lists/list');
