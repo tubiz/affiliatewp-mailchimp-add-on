@@ -7,9 +7,9 @@
 
 **Requires at least:** 3.8
 
-**Tested up to:** 3.9.1
+**Tested up to:** 4.0
 
-**Stable tag:** 1.0.2
+**Stable tag:** 1.0.3
 
 **License:** GPLv2 or later
 
@@ -80,6 +80,7 @@ To configure the AffiliateWP MailChimp Add-On plugin
 * __Checkbox Label__ - allows you to set a custom label that affiliates will see telling them to subscribe to your newsletter
 * __MailChimp API Key__ - enter your MailChimp API key here. You can get if from [here](https://us2.admin.mailchimp.com/account/api/https://us2.admin.mailchimp.com/account/api/). You need to enter this for the plugin to work.
 * __Double Opt-In__  - if enabled, affiliates will receive an email with a link to confirm their subscription to the list.
+* __Auto Subscribe__  - if enabled, affiliates will be automatically added to your list when registering.
 * __Newsletter List__ - select the newsletter list you want your affiliates to be subscribed to.
 * Click on __Save Changes__ for the changes you made to be effected.
 
@@ -94,22 +95,27 @@ To configure the AffiliateWP MailChimp Add-On plugin
 
 ## Changelog ##
 
-### 1.0.0 ###
-*   Initial release
-
-### 1.0.1 ###
-*	Removed affiliate links from readme.txt file
+### 1.0.3 ###
+*   New: Add subscribe checkbox to Affiliate settings tab for affiliate that haven't subscribe to your list
+*	New: Auto subscribe affiliate to list when registering
+*   Fix: Fix issue adding affiliate to list from admin page
 
 ### 1.0.2 ###
 *	Updated MailChimp class file
 *	Fixed issue arising from including MailChimp class file
 
+### 1.0.1 ###
+*	Removed affiliate links from readme.txt file
+
+### 1.0.0 ###
+*   Initial release
+
 
 
 ## Upgrade Notice ##
 
-There is no need to upgrade just yet.
-
+### 1.0.3 ###
+* This update allows affiliate to be auto subscribe to a list, it also display the subscribe checkbox on the Affliate settings tab for affiliate that haven't subscribe to your list.
 
 
 
@@ -126,3 +132,7 @@ There is no need to upgrade just yet.
 
 ###3. AffiliateWP MailChimp Add-On Settings
 ###![Screenshot 3](https://dl.dropboxusercontent.com/u/28591673/affiliatewp-mailchimp-addon/screenshot-3.png)
+
+
+###4. Subscribe checkbox on Affiliate Settings tab.
+###![Screenshot 4](https://dl.dropboxusercontent.com/u/28591673/affiliatewp-mailchimp-addon/screenshot-4.png)
