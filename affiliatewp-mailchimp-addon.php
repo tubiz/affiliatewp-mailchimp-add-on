@@ -3,7 +3,7 @@
     Plugin Name: AffiliateWP Mailchimp Add-on
     Plugin URI: http://bosun.me/affiliatewp-mailchimp-addon
     Description: Adds a checkbox for new affiliates to subscribe to your MailChimp Newsletter during signup.
-    Version: 1.0.3
+    Version: 1.0.4
     Author: Tunbosun Ayinla
     Author URI: http://www.bosun.me
     License:           GPL-2.0+
@@ -273,9 +273,9 @@ if( ! class_exists( 'AffiliateWP_MailChimp_Add_on' ) ){
                     $optin = false;
                 }
 
-                require_once( 'classes/api/MailChimp.php' );
+                require_once  plugin_dir_path( __FILE__ ) . 'classes/api/MailChimp.php';
 
-                $MailChimp = new \Drewm\MailChimp( $mailchimp_api_key );
+                $MailChimp = new AffWPMailChimp( $mailchimp_api_key );
 
                 $result = $MailChimp->call('lists/subscribe', array(
                     'id'                => $mailchimp_list,
@@ -321,9 +321,9 @@ if( ! class_exists( 'AffiliateWP_MailChimp_Add_on' ) ){
 
                 $check_opt_in               = affiliate_wp()->settings->get( 'affwp_mailchimp_enable_opt_in' );
 
-                require_once( 'classes/api/MailChimp.php' );
+                require_once  plugin_dir_path( __FILE__ ) . 'classes/api/MailChimp.php';
 
-                $MailChimp = new \Drewm\MailChimp( $mailchimp_api_key );
+                $MailChimp = new AffWPMailChimp( $mailchimp_api_key );
 
                 if( $check_opt_in ){
                     $optin = true;
@@ -344,13 +344,13 @@ if( ! class_exists( 'AffiliateWP_MailChimp_Add_on' ) ){
                 $affiliate  = affiliate_wp()->affiliates->get_by( 'affiliate_id', $affiliate_id );
                 $user_id    = $affiliate->user_id;
 
-                update_user_meta( $user_id, 'tbz_affwp_subscribed_to_mailchimp', 'yes' );
-
-                if ( 'error' == $result['status'] ){
+                if( isset( $result['status'] ) && ( 'error' == $result['status'] ) ){
                     return false;
                 }
-
-                return true;
+                else{
+                    update_user_meta( $user_id, 'tbz_affwp_subscribed_to_mailchimp', 'yes' );
+                    return true;
+                }
             }
 
             if( ! empty( $_POST['affwp_mailchimp_subscribe'] ) && $mailchimp_api_key ) {
@@ -373,9 +373,9 @@ if( ! class_exists( 'AffiliateWP_MailChimp_Add_on' ) ){
                     $optin = false;
                 }
 
-                require_once( 'classes/api/MailChimp.php' );
+                require_once  plugin_dir_path( __FILE__ ) . 'classes/api/MailChimp.php';
 
-                $MailChimp = new \Drewm\MailChimp( $mailchimp_api_key );
+                $MailChimp = new AffWPMailChimp( $mailchimp_api_key );
 
                 $result = $MailChimp->call('lists/subscribe', array(
                     'id'                => $mailchimp_list,
@@ -390,13 +390,13 @@ if( ! class_exists( 'AffiliateWP_MailChimp_Add_on' ) ){
                 $affiliate  = affiliate_wp()->affiliates->get_by( 'affiliate_id', $affiliate_id );
                 $user_id    = $affiliate->user_id;
 
-                update_user_meta( $user_id, 'tbz_affwp_subscribed_to_mailchimp', 'yes' );
-
-                if ( 'error' == $result['status'] ){
+                if( isset( $result['status'] ) && ( 'error' == $result['status'] ) ){
                     return false;
                 }
-
-                return true;
+                else{
+                    update_user_meta( $user_id, 'tbz_affwp_subscribed_to_mailchimp', 'yes' );
+                    return true;
+                }
             }
 
             return false;
@@ -433,9 +433,9 @@ if( ! class_exists( 'AffiliateWP_MailChimp_Add_on' ) ){
                     $optin = false;
                 }
 
-                require_once( 'classes/api/MailChimp.php' );
+                require_once  plugin_dir_path( __FILE__ ) . 'classes/api/MailChimp.php';
 
-                $MailChimp = new \Drewm\MailChimp( $mailchimp_api_key );
+                $MailChimp = new AffWPMailChimp( $mailchimp_api_key );
 
                 $result = $MailChimp->call('lists/subscribe', array(
                     'id'                => $mailchimp_list,
@@ -447,13 +447,13 @@ if( ! class_exists( 'AffiliateWP_MailChimp_Add_on' ) ){
                     'send_welcome'      => false,
                 ));
 
-                update_user_meta( $user_id, 'tbz_affwp_subscribed_to_mailchimp', 'yes' );
-
-                if ( 'error' == $result['status'] ){
+                if( isset( $result['status'] ) && ( 'error' == $result['status'] ) ){
                     return false;
                 }
-
-                return true;
+                else{
+                    update_user_meta( $user_id, 'tbz_affwp_subscribed_to_mailchimp', 'yes' );
+                    return true;
+                }
 
             }
 
@@ -470,10 +470,10 @@ if( ! class_exists( 'AffiliateWP_MailChimp_Add_on' ) ){
 
                 $mailchimp_lists        = array();
 
-                if ( ! class_exists( 'MailChimp' ) )
-                    require_once( 'classes/api/MailChimp.php' );
+                if ( ! class_exists( 'AffWPMailChimp' ) )
+                    require_once  plugin_dir_path( __FILE__ ) . 'classes/api/MailChimp.php';
 
-                $mailchimp = new \Drewm\MailChimp( $mailchimp_api_key );
+                $mailchimp = new AffWPMailChimp( $mailchimp_api_key );
                 $lists = $mailchimp->call('lists/list');
 
                 $lists_count =  $lists['total'];

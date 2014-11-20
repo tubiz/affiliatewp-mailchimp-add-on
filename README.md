@@ -9,7 +9,7 @@
 
 **Tested up to:** 4.0
 
-**Stable tag:** 1.0.3
+**Stable tag:** 1.0.4
 
 **License:** GPLv2 or later
 
@@ -95,6 +95,9 @@ To configure the AffiliateWP MailChimp Add-On plugin
 
 ## Changelog ##
 
+### 1.0.4 ###
+*	Fix: Fix MailChimp class not found on some WordPress installations
+
 ### 1.0.3 ###
 *   New: Add subscribe checkbox to Affiliate settings tab for affiliate that haven't subscribe to your list
 *	New: Auto subscribe affiliate to list when registering
@@ -114,8 +117,8 @@ To configure the AffiliateWP MailChimp Add-On plugin
 
 ## Upgrade Notice ##
 
-### 1.0.3 ###
-* This update allows affiliate to be auto subscribe to a list, it also display the subscribe checkbox on the Affliate settings tab for affiliate that haven't subscribe to your list.
+### 1.0.4 ###
+* This update fix a MailChimp class not found on some WordPress installations
 
 
 
