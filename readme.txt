@@ -3,8 +3,8 @@ Contributors: tubiz
 Donate link: http://bosun.me/donate
 Tags: affiliatewp, affiliate wp, mailchimp, tubiz plugins, nigeria, e-commerce, ecommerce, Tunbosun Ayinla
 Requires at least: 3.8
-Tested up to: 4.0
-Stable tag: 1.0.3
+Tested up to: 4.0.1
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -87,6 +87,9 @@ To configure the AffiliateWP MailChimp Add-On plugin
 
 == Changelog ==
 
+= 1.0.4 =
+*	Fix: Fix MailChimp class not found error on some WordPress installations
+
 = 1.0.3 =
 *   New: Add subscribe checkbox to Affiliate settings tab for affiliate that haven't subscribe to your list
 *	New: Auto subscribe affiliate to list when registering
@@ -94,7 +97,7 @@ To configure the AffiliateWP MailChimp Add-On plugin
 
 = 1.0.2 =
 *	Updated MailChimp class file
-*	FFixed issue arising from including MailChimp class file
+*	Fixed issue arising from including MailChimp class file
 
 = 1.0.1 =
 *	Removed affiliate links from readme.txt file
@@ -106,8 +109,8 @@ To configure the AffiliateWP MailChimp Add-On plugin
 
 == Upgrade Notice ==
 
-= 1.0.3 =
-* This update allows affiliate to be auto subscribe to a list, it also display the subscribe checkbox on the Affliate settings tab for affiliate that haven't subscribe to your list.
+= 1.0.4 =
+* This update fix a MailChimp class not found error on some WordPress installations
 
 
 
