@@ -9,7 +9,7 @@
 
 **Tested up to:** 4.0.1
 
-**Stable tag:** 1.0.4
+**Stable tag:** 1.0.5
 
 **License:** GPLv2 or later
 
@@ -95,6 +95,9 @@ To configure the AffiliateWP MailChimp Add-On plugin
 
 ## Changelog ##
 
+### 1.0.5 ###
+*	Fix: Add the Mailchimp class, that wasn't added in the v1.0.4 update.
+
 ### 1.0.4 ###
 *	Fix: Fix MailChimp class not found on some WordPress installations
 
@@ -117,8 +120,8 @@ To configure the AffiliateWP MailChimp Add-On plugin
 
 ## Upgrade Notice ##
 
-### 1.0.4 ###
-* This update fix a MailChimp class not found on some WordPress installations
+### 1.0.5 ###
+* Updating the plugin to v1.0.4 breaks the WordPress admin as the MailChimp class wasn't added, this fixes it. So sorry about this.
 
 
 

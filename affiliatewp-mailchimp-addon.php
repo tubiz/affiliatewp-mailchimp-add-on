@@ -3,7 +3,7 @@
     Plugin Name: AffiliateWP Mailchimp Add-on
     Plugin URI: http://bosun.me/affiliatewp-mailchimp-addon
     Description: Adds a checkbox for new affiliates to subscribe to your MailChimp Newsletter during signup.
-    Version: 1.0.4
+    Version: 1.0.5
     Author: Tunbosun Ayinla
     Author URI: http://www.bosun.me
     License:           GPL-2.0+
