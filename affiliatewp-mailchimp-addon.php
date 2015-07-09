@@ -3,7 +3,7 @@
     Plugin Name: AffiliateWP Mailchimp Add-on
     Plugin URI: http://bosun.me/affiliatewp-mailchimp-addon
     Description: Adds a checkbox for new affiliates to subscribe to your MailChimp Newsletter during signup.
-    Version: 1.0.5
+    Version: 1.0.6
     Author: Tunbosun Ayinla
     Author URI: http://www.bosun.me
     License:           GPL-2.0+
@@ -29,7 +29,7 @@ if( ! class_exists( 'AffiliateWP_MailChimp_Add_on' ) ){
 
         private function __construct() {
             add_action( 'admin_init', array( $this, 'activation' ) );
-            add_action( 'affwp_settings_integrations', array( $this, 'affwp_mailchimp_settings' ), 10 , 1 );
+            add_filter( 'affwp_settings_integrations', array( $this, 'affwp_mailchimp_settings' ), 10 );
             add_action( 'affwp_register_user', array( $this, 'affwp_mailchimp_add_user_to_list'), 10 , 2 );
 
             if( ! is_admin() ) {
@@ -309,11 +309,29 @@ if( ! class_exists( 'AffiliateWP_MailChimp_Add_on' ) ){
 
             if( $mailchimp_enabled && $mailchimp_auto_subscribe ){
 
-                $name                       = explode( ' ', sanitize_text_field( $_POST['affwp_user_name'] ) );
+                if( is_user_logged_in() ){
 
-                $first_name                 = $name[0];
-                $last_name                  = isset( $name[1] ) ? $name[1] : '';
-                $email                      = sanitize_text_field( $_POST['affwp_user_email'] );
+                    global $wpdb;
+
+                    $user_id = get_current_user_id();
+
+                    $email   = $wpdb->get_var( $wpdb->prepare( "SELECT user_email FROM $wpdb->users WHERE ID = '%d'", $user_id ) );
+                    $name    = $wpdb->get_var( $wpdb->prepare( "SELECT display_name FROM $wpdb->users WHERE ID = '%d'", $user_id ) );
+
+                    $name           = explode( ' ', $name );
+                    $first_name     = $name[0];
+                    $last_name      = isset( $name[1] ) ? $name[1] : '';
+                }
+                else{
+                    $name           = explode( ' ', sanitize_text_field( $_POST['affwp_user_name'] ) );
+
+                    $first_name     = $name[0];
+                    $last_name      = isset( $name[1] ) ? $name[1] : '';
+                    $email          = sanitize_text_field( $_POST['affwp_user_email'] );
+
+                    $affiliate      = affiliate_wp()->affiliates->get_by( 'affiliate_id', $affiliate_id );
+                    $user_id        = $affiliate->user_id;
+                }
 
                 $mailchimp_list             = affiliate_wp()->settings->get( 'affwp_mailchimp_list' );
 
@@ -340,9 +358,6 @@ if( ! class_exists( 'AffiliateWP_MailChimp_Add_on' ) ){
                     'replace_interests' => false,
                     'send_welcome'      => false,
                 ));
-
-                $affiliate  = affiliate_wp()->affiliates->get_by( 'affiliate_id', $affiliate_id );
-                $user_id    = $affiliate->user_id;
 
                 if( isset( $result['status'] ) && ( 'error' == $result['status'] ) ){
                     return false;
@@ -355,11 +370,29 @@ if( ! class_exists( 'AffiliateWP_MailChimp_Add_on' ) ){
 
             if( ! empty( $_POST['affwp_mailchimp_subscribe'] ) && $mailchimp_api_key ) {
 
-                $name                       = explode( ' ', sanitize_text_field( $_POST['affwp_user_name'] ) );
+                if( is_user_logged_in() ){
 
-                $first_name                 = $name[0];
-                $last_name                  = isset( $name[1] ) ? $name[1] : '';
-                $email                      = sanitize_text_field( $_POST['affwp_user_email'] );
+                    global $wpdb;
+
+                    $user_id = get_current_user_id();
+
+                    $email   = $wpdb->get_var( $wpdb->prepare( "SELECT user_email FROM $wpdb->users WHERE ID = '%d'", $user_id ) );
+                    $name    = $wpdb->get_var( $wpdb->prepare( "SELECT display_name FROM $wpdb->users WHERE ID = '%d'", $user_id ) );
+
+                    $name           = explode( ' ', $name );
+                    $first_name     = $name[0];
+                    $last_name      = isset( $name[1] ) ? $name[1] : '';
+                }
+                else{
+                    $name           = explode( ' ', sanitize_text_field( $_POST['affwp_user_name'] ) );
+
+                    $first_name     = $name[0];
+                    $last_name      = isset( $name[1] ) ? $name[1] : '';
+                    $email          = sanitize_text_field( $_POST['affwp_user_email'] );
+
+                    $affiliate      = affiliate_wp()->affiliates->get_by( 'affiliate_id', $affiliate_id );
+                    $user_id        = $affiliate->user_id;
+                }
 
                 $mailchimp_list             = affiliate_wp()->settings->get( 'affwp_mailchimp_list' );
 
@@ -386,9 +419,6 @@ if( ! class_exists( 'AffiliateWP_MailChimp_Add_on' ) ){
                     'replace_interests' => false,
                     'send_welcome'      => false,
                 ));
-
-                $affiliate  = affiliate_wp()->affiliates->get_by( 'affiliate_id', $affiliate_id );
-                $user_id    = $affiliate->user_id;
 
                 if( isset( $result['status'] ) && ( 'error' == $result['status'] ) ){
                     return false;
