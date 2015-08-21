@@ -3,7 +3,7 @@ Contributors: tubiz
 Donate link: http://bosun.me/donate
 Tags: affiliatewp, affiliate wp, mailchimp, tubiz plugins, nigeria, e-commerce, ecommerce, Tunbosun Ayinla
 Requires at least: 3.8
-Tested up to: 4.2
+Tested up to: 4.3
 Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
