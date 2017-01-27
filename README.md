@@ -32,19 +32,19 @@ An admin can also choose whether to add an affiliate to the newsletter when addi
 
 ### What is AffiliateWP? ###
 
-[AffiliateWP](http://affiliatewp.com/) provides a complete affiliate management system for your WordPress website that seamlessly integrates with all major WordPress e-commerce and membership platforms. It aims to provide everything you need in a simple, clean, easy to use system that you will love to use.
+[AffiliateWP](http://affiliatewp.com/) provides a complete affiliate management system for your WordPress website that seamlessly integrates with all major WordPress eCommerce and membership platforms. It aims to provide everything you need in a simple, clean, easy to use system that you will love to use.
 
 
 
 ### Suggestions / Feature Request ###
 
-If you have suggestions or a new feature request, feel free to get in touch with me via the contact form on my website [here](http://bosun.me/get-in-touch/)
+If you have suggestions or a new feature request, feel free to get in touch with me via the contact form on my website [here](http://bosun.me/get-in-touch/).
 
-You can also follow me on Twitter! **[@tubiz](http://twitter.com/tubiz)**
+You can also follow me on Twitter **[(@tubiz)](http://twitter.com/tubiz)**.
 
 
 ### Contribute ###
-To contribute to this plugin feel free to fork it on GitHub [AffiliateWP MailChimp Add-On on GitHub](https://github.com/tubiz/affiliatewp-mailchimp-add-on)
+To contribute to this plugin feel free to fork it on GitHub [AffiliateWP MailChimp Add-On on GitHub](https://github.com/tubiz/affiliatewp-mailchimp-add-on).
 
 
 
@@ -52,28 +52,29 @@ To contribute to this plugin feel free to fork it on GitHub [AffiliateWP MailChi
 ## Installation ##
 
 ### Automatic Installation ###
-* 	Login to your WordPress Admin area
-* 	Go to "Plugins > Add New" from the left hand menu
-* 	In the search box type "AffiliateWP MailChimp Add-On"
-*	From the search result you will see "AffiliateWP MailChimp Add-On" click on "Install Now" to install the plugin
-*	A popup window will ask you to confirm if you want to install the Plugin.
-* Click "Proceed" to continue the installation. The resulting installation screen will list the installation as successful or note any problems during the install.
-* If successful, click "Activate Plugin" to activate it.
-* To configure the plugin visit the AffiliateWP MailChimp Settings section below.
+1.  Login to your WordPress Dashboard area.
+1.  Go to "Plugins > Add New" from the left hand menu.
+1.  In the search box type "AffiliateWP MailChimp Add-On".
+1.	From the search result you will see "AffiliateWP MailChimp Add-On" click on "Install Now" to install the plugin.
+1.  A popup window will ask you to confirm if you want to install the plugin.
+1.  Click "Proceed" to continue the installation. The resulting installation screen will list the installation as successful or note any problems during the install.
+1.  If successful, click "Activate Plugin" to activate it.
+1.  To configure the plugin visit the AffiliateWP MailChimp Settings section below.
 
 ### Manual Installation ###
-* 	Download the plugin zip file
-* 	Login to your WordPress Admin. Click on "Plugins > Add New" from the left hand menu.
-*  Click on the "Upload" option, then click "Choose File" to select the zip file from your computer. Once selected, press "OK" and press the "Install Now" button.
-*  	Activate the plugin.
-* 	To configure the plugin visit the AffiliateWP MailChimp Settings section below.
+1.  Download the plugin zip file.
+1.  Login to your WordPress Dashboard. Click on "Plugins > Add New" from the left hand menu.
+1.  Click on the "Upload" option, then click "Choose File" to select the zip file from your computer. Once selected, press "OK" and press the "Install Now" button.
+1.  Activate the plugin.
+1.  To configure the plugin visit the AffiliateWP MailChimp Settings section below.
 
 
 ### AffiliateWP MailChimp Settings ###
-To configure the AffiliateWP MailChimp Add-On plugin
-1. 	Open the settings page for AffiliateWP and click the "Integrations" tab.
-2. 	Scroll down a bit and you will see a section for "AffiliateWP MailChimp Settings".
-2.	Configure your "AffiliateWP MailChimp Add-On" settings. See details below.
+To configure the AffiliateWP MailChimp Add-On plugin:
+
+1.  Open the settings page for AffiliateWP and click the "Integrations" tab.  
+1.  Scroll down a bit and you will see a section for "AffiliateWP MailChimp Settings".  
+1.  Configure your "AffiliateWP MailChimp Add-On" settings. See details below:  
 
 
 * __Enable/Disable__ - check the box to enable AffiliateWP MailChimp Add-On. This adds a checkbox on the Affiliate signup page for affiliates to signup for your newsletter.
@@ -89,7 +90,7 @@ To configure the AffiliateWP MailChimp Add-On plugin
 
 ### What Do I Need To Use The Plugin ###
 
-1.	You need to have the [AffiliateWP](http://affiliatewp.com/) plugin installed and activated on your WordPress site.
+1.  You need to have the [AffiliateWP](http://affiliatewp.com/) plugin installed and activated on your WordPress site.
 
 
 
