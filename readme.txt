@@ -2,9 +2,9 @@
 Contributors: tubiz
 Donate link: http://bosun.me/donate
 Tags: affiliatewp, affiliate wp, mailchimp, tubiz plugins, nigeria, e-commerce, ecommerce, Tunbosun Ayinla
-Requires at least: 3.8
-Tested up to: 4.3
-Stable tag: 1.0.6
+Requires at least: 4.4
+Tested up to: 4.7
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -87,6 +87,9 @@ To configure the AffiliateWP MailChimp Add-On plugin
 
 == Changelog ==
 
+= 1.1.0 =
+* 	Refactor: Update the MailChimp API wrapper to use the latest MailChimp API v3
+
 = 1.0.6 =
 *	Fix: Already registered user not being added to MailChimp when signing up as an Affiliate
 * 	Refactor: Update MailChimp API wrapper
@@ -116,8 +119,8 @@ To configure the AffiliateWP MailChimp Add-On plugin
 
 == Upgrade Notice ==
 
-= 1.0.6 =
-*  Fix: Already registered user not being added to MailChimp when signing up as an Affiliate.
+= 1.1.0 =
+*  Update the MailChimp API wrapper to use the latest MailChimp API v3
 
 
 
