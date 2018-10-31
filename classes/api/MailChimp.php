@@ -1,182 +1,203 @@
-
 <?php
 /**
  * Super-simple, minimum abstraction MailChimp API v3 wrapper
  * MailChimp API v3: http://developer.mailchimp.com
  *
- * @author Based on class by Drew McLellan <drew.mclellan@gmail.com>
+ * @author  Based on class by Drew McLellan <drew.mclellan@gmail.com>
  * @version 1.0
  */
 
 class TbzAffWPMailChimp {
-    private $api_key;
-    private $api_endpoint = 'https://<dc>.api.mailchimp.com/3.0';
 
-    public $verify_ssl = true;
+	private $api_key;
+	private $api_endpoint = 'https://<dc>.api.mailchimp.com/3.0';
 
-    private $last_response      = array();
+	public $verify_ssl = true;
 
-    /**
-     * Create a new instance
-     * @param string $api_key Your MailChimp API key
-     * @throws \Exception
-     */
-    public function __construct( $api_key ) {
-        $this->api_key = $api_key;
+	private $last_response = array();
 
-        if ( strpos( $this->api_key, '-' ) === false ) {
-            throw new \Exception( "Invalid MailChimp API key `{$api_key}` supplied." );
-        }
+	/**
+	 * Create a new instance
+	 *
+	 * @param string $api_key Your MailChimp API key
+	 *
+	 * @throws \Exception
+	 */
+	public function __construct( $api_key ) {
+		$this->api_key = $api_key;
 
-        list(, $data_center) = explode( '-', $this->api_key );
-        $this->api_endpoint  = str_replace( '<dc>', $data_center, $this->api_endpoint );
+		if ( strpos( $this->api_key, '-' ) === false ) {
+			throw new \Exception( "Invalid MailChimp API key `{$api_key}` supplied." );
+		}
 
-        $this->last_response = array( 'headers' => null, 'body' => null );
-    }
+		list( , $data_center ) = explode( '-', $this->api_key );
+		$this->api_endpoint = str_replace( '<dc>', $data_center, $this->api_endpoint );
 
-    /**
-     * Create a new instance of a Batch request. Optionally with the ID of an existing batch.
-     * @param string $batch_id Optional ID of an existing batch, if you need to check its status for example.
-     * @return Batch            New Batch object.
-     */
-    public function new_batch( $batch_id = null ) {
-        return new Batch( $this, $batch_id );
-    }
+		$this->last_response = array( 'headers' => null, 'body' => null );
+	}
 
-    /**
-     * Convert an email address into a 'subscriber hash' for identifying the subscriber in a method URL
-     * @param   string $email The subscriber's email address
-     * @return  string          Hashed version of the input
-     */
-    public function subscriberHash( $email ) {
-        return md5( strtolower( $email ) );
-    }
+	/**
+	 * Create a new instance of a Batch request. Optionally with the ID of an existing batch.
+	 *
+	 * @param string $batch_id Optional ID of an existing batch, if you need to check its status for example.
+	 *
+	 * @return Batch            New Batch object.
+	 */
+	public function new_batch( $batch_id = null ) {
+		return new Batch( $this, $batch_id );
+	}
 
-    /**
-     * Get an array containing the HTTP headers and the body of the API response.
-     * @return array  Assoc array with keys 'headers' and 'body'
-     */
-    public function getLastResponse() {
-        return $this->last_response;
-    }
+	/**
+	 * Convert an email address into a 'subscriber hash' for identifying the subscriber in a method URL
+	 *
+	 * @param   string $email The subscriber's email address
+	 *
+	 * @return  string          Hashed version of the input
+	 */
+	public function subscriberHash( $email ) {
+		return md5( strtolower( $email ) );
+	}
 
-    /**
-     * Make an HTTP DELETE request - for deleting data
-     * @param   string $method URL of the API request method
-     * @param   array $args Assoc array of arguments (if any)
-     * @param   int $timeout Timeout limit for request in seconds
-     * @return  array|false   Assoc array of API response, decoded from JSON
-     */
-    public function delete( $method, $args = array(), $timeout = 10 ) {
-        return $this->makeRequest( 'delete', $method, $args, $timeout );
-    }
+	/**
+	 * Get an array containing the HTTP headers and the body of the API response.
+	 *
+	 * @return array  Assoc array with keys 'headers' and 'body'
+	 */
+	public function getLastResponse() {
+		return $this->last_response;
+	}
 
-    /**
-     * Make an HTTP GET request - for retrieving data
-     * @param   string $method URL of the API request method
-     * @param   array $args Assoc array of arguments (usually your data)
-     * @param   int $timeout Timeout limit for request in seconds
-     * @return  array|false   Assoc array of API response, decoded from JSON
-     */
-    public function get( $method, $args = array(), $timeout = 10 ) {
-        return $this->makeRequest( 'get', $method, $args, $timeout );
-    }
+	/**
+	 * Make an HTTP DELETE request - for deleting data
+	 *
+	 * @param   string $method  URL of the API request method
+	 * @param   array  $args    Assoc array of arguments (if any)
+	 * @param   int    $timeout Timeout limit for request in seconds
+	 *
+	 * @return  array|false   Assoc array of API response, decoded from JSON
+	 */
+	public function delete( $method, $args = array(), $timeout = 10 ) {
+		return $this->makeRequest( 'delete', $method, $args, $timeout );
+	}
 
-    /**
-     * Make an HTTP PATCH request - for performing partial updates
-     * @param   string $method URL of the API request method
-     * @param   array $args Assoc array of arguments (usually your data)
-     * @param   int $timeout Timeout limit for request in seconds
-     * @return  array|false   Assoc array of API response, decoded from JSON
-     */
-    public function patch( $method, $args = array(), $timeout = 10 ) {
-        return $this->makeRequest( 'patch', $method, $args, $timeout );
-    }
+	/**
+	 * Make an HTTP GET request - for retrieving data
+	 *
+	 * @param   string $method  URL of the API request method
+	 * @param   array  $args    Assoc array of arguments (usually your data)
+	 * @param   int    $timeout Timeout limit for request in seconds
+	 *
+	 * @return  array|false   Assoc array of API response, decoded from JSON
+	 */
+	public function get( $method, $args = array(), $timeout = 10 ) {
+		return $this->makeRequest( 'get', $method, $args, $timeout );
+	}
 
-    /**
-     * Make an HTTP POST request - for creating and updating items
-     * @param   string $method URL of the API request method
-     * @param   array $args Assoc array of arguments (usually your data)
-     * @param   int $timeout Timeout limit for request in seconds
-     * @return  array|false   Assoc array of API response, decoded from JSON
-     */
-    public function post( $method, $args = array(), $timeout = 10 ) {
-        return $this->makeRequest( 'post', $method, $args, $timeout );
-    }
+	/**
+	 * Make an HTTP PATCH request - for performing partial updates
+	 *
+	 * @param   string $method  URL of the API request method
+	 * @param   array  $args    Assoc array of arguments (usually your data)
+	 * @param   int    $timeout Timeout limit for request in seconds
+	 *
+	 * @return  array|false   Assoc array of API response, decoded from JSON
+	 */
+	public function patch( $method, $args = array(), $timeout = 10 ) {
+		return $this->makeRequest( 'patch', $method, $args, $timeout );
+	}
 
-    /**
-     * Make an HTTP PUT request - for creating new items
-     * @param   string $method URL of the API request method
-     * @param   array $args Assoc array of arguments (usually your data)
-     * @param   int $timeout Timeout limit for request in seconds
-     * @return  array|false   Assoc array of API response, decoded from JSON
-     */
-    public function put( $method, $args = array(), $timeout = 10 ) {
-        return $this->makeRequest( 'put', $method, $args, $timeout );
-    }
+	/**
+	 * Make an HTTP POST request - for creating and updating items
+	 *
+	 * @param   string $method  URL of the API request method
+	 * @param   array  $args    Assoc array of arguments (usually your data)
+	 * @param   int    $timeout Timeout limit for request in seconds
+	 *
+	 * @return  array|false   Assoc array of API response, decoded from JSON
+	 */
+	public function post( $method, $args = array(), $timeout = 10 ) {
+		return $this->makeRequest( 'post', $method, $args, $timeout );
+	}
 
-    /**
-     * Performs the underlying HTTP request. Not very exciting.
-     * @param  string $http_verb The HTTP verb to use: get, post, put, patch, delete
-     * @param  string $method The API method to be called
-     * @param  array $args Assoc array of parameters to be passed
-     * @param int $timeout
-     * @return array|false Assoc array of decoded result
-     * @throws \Exception
-     */
-    private function makeRequest( $http_verb, $method, $args = array(), $timeout = 10 ) {
-        $this->reset();
+	/**
+	 * Make an HTTP PUT request - for creating new items
+	 *
+	 * @param   string $method  URL of the API request method
+	 * @param   array  $args    Assoc array of arguments (usually your data)
+	 * @param   int    $timeout Timeout limit for request in seconds
+	 *
+	 * @return  array|false   Assoc array of API response, decoded from JSON
+	 */
+	public function put( $method, $args = array(), $timeout = 10 ) {
+		return $this->makeRequest( 'put', $method, $args, $timeout );
+	}
 
-        $url = $this->api_endpoint . '/' . $method;
+	/**
+	 * Performs the underlying HTTP request. Not very exciting.
+	 *
+	 * @param  string $http_verb The HTTP verb to use: get, post, put, patch, delete
+	 * @param  string $method    The API method to be called
+	 * @param  array  $args      Assoc array of parameters to be passed
+	 * @param int     $timeout
+	 *
+	 * @return array|false Assoc array of decoded result
+	 * @throws \Exception
+	 */
+	private function makeRequest( $http_verb, $method, $args = array(), $timeout = 10 ) {
+		$this->reset();
 
-        $headers = array();
-        $headers['Authorization'] = 'Basic ' . base64_encode( 'affwp:' . $this->api_key );
-        $headers['Accept'] = 'application/vnd.api+json';
-        $headers['Content-Type'] = 'application/vnd.api+json';
-        $headers['User-Agent'] = 'AffiliateWP Mailchimp Add-on; ' . get_bloginfo( 'url' );
+		$url = $this->api_endpoint . '/' . $method;
 
-        $request_args = array(
-            'method'    => $http_verb,
-            'headers'   => $headers,
-            'timeout'   => $timeout,
-            'sslverify' => $this->verify_ssl,
-        );
+		$headers                  = array();
+		$headers['Authorization'] = 'Basic ' . base64_encode( 'affwp:' . $this->api_key );
+		$headers['Accept']        = 'application/vnd.api+json';
+		$headers['Content-Type']  = 'application/vnd.api+json';
+		$headers['User-Agent']    = 'AffiliateWP Mailchimp Add-on; ' . get_bloginfo( 'url' );
 
-        // attach arguments (in body or URL)
-        if( $http_verb === 'GET' ) {
-            $url = add_query_arg( $args, $url );
-        } else {
-            $request_args['body'] = json_encode( $args );
-        }
+		$request_args = array(
+			'method'    => $http_verb,
+			'headers'   => $headers,
+			'timeout'   => $timeout,
+			'sslverify' => $this->verify_ssl,
+		);
 
-        // perform request
-        $response = wp_remote_request( $url, $request_args );
+		// attach arguments (in body or URL)
+		if ( $http_verb === 'GET' ) {
+			$url = add_query_arg( $args, $url );
+		} else {
+			$request_args['body'] = json_encode( $args );
+		}
 
-        $this->last_response      = $response;
+		// perform request
+		$response = wp_remote_request( $url, $request_args );
 
-        $formattedResponse = $this->formatResponse( wp_remote_retrieve_body( $response ) );
+		$this->last_response = $response;
 
-        return $formattedResponse;
-    }
+		$formattedResponse = $this->formatResponse( wp_remote_retrieve_body( $response ) );
 
-    /**
-     * Decode the response and format any error messages for debugging
-     * @param array $response The response from the remote request
-     * @return array|false    The JSON decoded into an array
-     */
-    private function formatResponse( $response ) {
-        if ( !empty( $response ) ) {
-            return json_decode($response, true);
-        }
+		return $formattedResponse;
+	}
 
-        return false;
-    }
+	/**
+	 * Decode the response and format any error messages for debugging
+	 *
+	 * @param array $response The response from the remote request
+	 *
+	 * @return array|false    The JSON decoded into an array
+	 */
+	private function formatResponse( $response ) {
+		if ( ! empty( $response ) ) {
+			return json_decode( $response, true );
+		}
 
-    /**
-     * Empties all data from previous response
-     */
-    private function reset() {
-        $this->last_response = null;
-    }
+		return false;
+	}
+
+	/**
+	 * Empties all data from previous response
+	 */
+	private function reset() {
+		$this->last_response = null;
+	}
 
 }

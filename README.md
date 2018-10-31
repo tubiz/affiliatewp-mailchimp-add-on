@@ -1,15 +1,15 @@
 # AffiliateWP MailChimp Add-On #
 **Contributors:** tubiz
 
-**Donate link:** http://bosun.me/donate
+**Donate link:** https://bosun.me/donate
 
 **Tags:** affiliatewp, affiliate wp, mailchimp, tubiz plugins, nigeria, e-commerce, ecommerce, Tunbosun Ayinla
 
 **Requires at least:** 4.4
 
-**Tested up to:** 4.7
+**Tested up to:** 4.9
 
-**Stable tag:** 1.1.0
+**Stable tag:** 1.2.0
 
 **License:** GPLv2 or later
 
@@ -23,7 +23,7 @@ AffiliateWP MailChimp Add-on adds a newsletter signup checkbox to your Affiliate
 
 ## Description ##
 
-> This plugin requires [AffiliateWP](http://affiliatewp.com/) to be installed and activated on your site. <strong>It will NOT function without it</strong>.
+> This plugin requires [AffiliateWP](https://affiliatewp.com/) to be installed and activated on your site. <strong>It will NOT function without it</strong>.
 
 AffiliateWP MailChimp Add-on adds a checkbox to the Affiliate sign up page, which enables your affiliates to subscribe to your MailChimp powered newsletter when registering.
 
@@ -32,15 +32,15 @@ An admin can also choose whether to add an affiliate to the newsletter when addi
 
 ### What is AffiliateWP? ###
 
-[AffiliateWP](http://affiliatewp.com/) provides a complete affiliate management system for your WordPress website that seamlessly integrates with all major WordPress eCommerce and membership platforms. It aims to provide everything you need in a simple, clean, easy to use system that you will love to use.
+[AffiliateWP](https://affiliatewp.com/) provides a complete affiliate management system for your WordPress website that seamlessly integrates with all major WordPress eCommerce and membership platforms. It aims to provide everything you need in a simple, clean, easy to use system that you will love to use.
 
 
 
 ### Suggestions / Feature Request ###
 
-If you have suggestions or a new feature request, feel free to get in touch with me via the contact form on my website [here](http://bosun.me/get-in-touch/).
+If you have suggestions or a new feature request, feel free to get in touch with me via the contact form on my website [here](https://bosun.me/get-in-touch/).
 
-You can also follow me on Twitter **[(@tubiz)](http://twitter.com/tubiz)**.
+You can also follow me on Twitter **[(@tubiz)](https://twitter.com/tubiz)**.
 
 
 ### Contribute ###
@@ -90,11 +90,14 @@ To configure the AffiliateWP MailChimp Add-On plugin:
 
 ### What Do I Need To Use The Plugin ###
 
-1.  You need to have the [AffiliateWP](http://affiliatewp.com/) plugin installed and activated on your WordPress site.
+1.  You need to have the [AffiliateWP](https://affiliatewp.com/) plugin installed and activated on your WordPress site.
 
 
 
 ## Changelog ##
+
+### 1.2.0 ###
+* 	Bug fixes
 
 ### 1.1.0 ###
 * 	Refactor: Update the MailChimp API wrapper to use the latest MailChimp API v3
@@ -128,8 +131,8 @@ To configure the AffiliateWP MailChimp Add-On plugin:
 
 ## Upgrade Notice ##
 
-### 1.1.0 ###
-*  Update the MailChimp API wrapper to use the latest MailChimp API v3
+### 1.2.0 ###
+* 	Bug fixes
 
 
 
